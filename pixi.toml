@@ -1,0 +1,11 @@
+[workspace]
+authors = ["Greg Larsen <gslarsen2718@gmail.com>"]
+channels = ["https://conda.modular.com/max-nightly", "conda-forge"]
+name = "life"
+platforms = ["linux-aarch64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+mojo = ">=0.25.7.0.dev2025110305,<0.26"
