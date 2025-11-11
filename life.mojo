@@ -1,20 +1,18 @@
 import time
 
 from gridv1 import Grid
-from python import Python
+from python import Python, PythonObject
 
 
 def run_display(
     var grid: Grid,
+    pygame: PythonObject,
     window_height: Int = 1000,
     window_width: Int = 1000,
     background_color: String = "black",
     cell_color: String = "green",
     pause: Float64 = 0.1,
 ) -> None:
-    # Import the pygame Python package
-    pygame = Python.import_module("pygame")
-
     # Initialize pygame modules
     pygame.init()
 
@@ -74,7 +72,9 @@ def run_display(
 # Running the program automatically invokes the main() function and the program exits
 # when the main() function returns
 def main():
-    var start: Grid = Grid.random(128, 128)
+    pygame = Python.import_module("pygame")
+    start = Grid.random(128, 128)
+    run_display(start^, pygame)
     # # Demonstrate the Stringable interface implemented by Grid
     # print(String(start))
     # print("Rows: ", start.rows)
@@ -82,4 +82,3 @@ def main():
     # # our custom type, Grid, supports indexing with __getitem__ and __setitem__ methods
     # # https://docs.modular.com/mojo/manual/operators/#subscript-and-slicing-dunder-methods
     # print("Cell [1, 1]: ", start[1, 1])
-    run_display(start^)
